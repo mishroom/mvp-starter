@@ -1,9 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import $ from 'jquery';
-import List from './components/List.jsx';
+//import List from './components/List.jsx';
 import Search from './components/Search.jsx';
-import Recipes from './components/Recipes.jsx';
+import RecipeList from './components/RecipeList.jsx';
+import RecipeItems from './components/RecipeItem.jsx';
 import Past from './components/Past.jsx';
 
 class App extends React.Component {
@@ -29,10 +30,26 @@ class App extends React.Component {
   }
 
   render () {
-    return (<div>
-      <h1>Item List</h1>
-      <List items={this.state.items}/>
-    </div>)
+    return (
+      <div id='parent'>
+        <div class="header">
+        <h1>~ Welcome to ~</h1>
+        <h1>RefridgerRaider</h1>
+        </div>
+
+        <div class="search">
+        <h3>Search</h3>
+        </div>
+
+        <div class="results">
+        <h3>Recipes</h3>
+        </div>
+
+        <div class="past">
+        <h3>Previous Searches</h3>
+        </div>  
+      </div>
+    )
   }
 }
 
