@@ -7,6 +7,7 @@ import RecipeList from './components/RecipeList.jsx';
 import RecipeItems from './components/RecipeItem.jsx';
 import Past from './components/Past.jsx';
 
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -30,8 +31,8 @@ class App extends React.Component {
     });
   }
 
-  search() {
-
+  search(ingredient) {
+      console.log('BUTTON CLICK: ', ingredient);
   }
 
   render () {

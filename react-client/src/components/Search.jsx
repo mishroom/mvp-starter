@@ -4,26 +4,29 @@ class Search extends React.Component{
 	constructor(props) {
 		super(props);
 		this.state = {
-			//add stuff here
-			ingredient: ""
+			query: ""
 		}
+		this.search = this.search.bind(this);
+		this.onChange = this.onChange.bind(this);
 	}
 
-	onChange(e) {
-
+	onChange (e) {
+		this.setState({
+			query: e.target.value
+		});
 	}
 
 	search() {
-		
+		this.props.onSearch(this.state.query);
 	}
 
 	render() {
 		return (
 			<div>
-			Enter an ingredient <input value={this.state.ingredients} onChange={this.onChange}/>       
+			Enter an ingredient <input value={this.state.querys} onChange={this.onChange}/>       
 			<button onClick={this.search}> Add Ingredent </button>
 			</div>
-		)
+			)
 	}
 }
 

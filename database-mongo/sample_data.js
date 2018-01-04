@@ -1,4 +1,4 @@
-[
+var sampleData = [
 	{
 		"id":556470,
 		"title":"Apple fritters",
@@ -45,3 +45,5 @@
 		"likes":0
 	}
 ]
+
+module.exports.sampleData = sampleData;
