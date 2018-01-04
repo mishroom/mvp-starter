@@ -18,6 +18,13 @@ var itemSchema = mongoose.Schema({
 
 var Item = mongoose.model('Item', itemSchema);
 
+var newInstance = new Item ({
+  quantity: 3,
+  description: "blubb"
+});
+
+newInstance.save();
+
 var selectAll = function(callback) {
   Item.find({}, function(err, items) {
     if(err) {

@@ -2,6 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import $ from 'jquery';
 import List from './components/List.jsx';
+import Search from './components/Search.jsx';
+import Recipes from './components/Recipes.jsx';
+import Past from './components/Past.jsx';
 
 class App extends React.Component {
   constructor(props) {
