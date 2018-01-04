@@ -11,7 +11,8 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = { 
-      items: []
+      ingredients: [],
+      recipes: [{name: 'RECIPE 1'}, {name: 'RECIPE 2'}]
     }
   }
 
@@ -30,27 +31,28 @@ class App extends React.Component {
   }
 
   search() {
-    
+
   }
 
   render () {
     return (
       <div id='parent'>
-        <div class="header">
+        <div className="header">
         <h1>~ Welcome to ~</h1>
         <h1>RefridgerRaider</h1>
         </div>
 
-        <div class="search">
+        <div className="search">
         <h3>Search</h3>
         <Search onSearch={this.search.bind(this)}/>
         </div>
 
-        <div class="results">
+        <div className="results">
         <h3>Recipes</h3>
+        <RecipeList recipes={this.state.recipes}/>
         </div>
 
-        <div class="past">
+        <div className="past">
         <h3>Previous Searches</h3>
         </div>  
       </div>
