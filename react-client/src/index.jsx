@@ -6,6 +6,7 @@ import Search from './components/Search.jsx';
 import RecipeList from './components/RecipeList.jsx';
 import RecipeItems from './components/RecipeItem.jsx';
 import Past from './components/Past.jsx';
+// import StyleSheet from './../dist/style.css';
 
 var sampleData = [
   {
