@@ -1,3 +1,36 @@
+body {
+	background-color: #A5DA91
+}
+
+img {
+	width: 50%;
+}
+
 .header {
-	color: red;
+	text-align:center;
+	color: black;
+}
+.search {
+
+}
+.results {
+float: left;
+    width: 50%;
+}
+.liked{
+float: left;
+    width: 50%;
+}
+
+.col {
+	float: left;
+    width: 50%;
+}
+.recipe{
+	box-sizing: border-box;
+	width: 90%;
+	border: solid #144900 5px;
+	padding: 5px;
+	margin-bottom:10px;
+	border-radius: 15px;
 }

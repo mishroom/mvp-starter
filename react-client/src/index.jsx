@@ -5,7 +5,7 @@ import $ from 'jquery';
 import Search from './components/Search.jsx';
 import RecipeList from './components/RecipeList.jsx';
 import RecipeItems from './components/RecipeItem.jsx';
-import Past from './components/Past.jsx';
+import Liked from './components/Past.jsx';
 // import StyleSheet from './../dist/style.css';
 
 var sampleData = [
@@ -102,8 +102,8 @@ class App extends React.Component {
         <RecipeList recipes={this.state.recipes}/>
         </div>
 
-        <div className="past">
-        <h3>Previous Searches</h3>
+        <div className="liked">
+        <h3>Liked Searches</h3>
         </div>  
       </div>
     )
