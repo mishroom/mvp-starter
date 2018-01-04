@@ -2,7 +2,7 @@ import React from 'react';
 
 const RecipeItem = (props) => (
   <div>
-    { props.recipe.name }
+    { props.recipe.title }
   </div>
 )
 

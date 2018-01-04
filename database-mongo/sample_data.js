@@ -1,4 +1,4 @@
-var sampleData = [
+sampleData = [
 	{
 		"id":556470,
 		"title":"Apple fritters",
@@ -47,3 +47,4 @@ var sampleData = [
 ]
 
 module.exports.sampleData = sampleData;
+// window.sampleData = sampleData;

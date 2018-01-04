@@ -7,13 +7,60 @@ import RecipeList from './components/RecipeList.jsx';
 import RecipeItems from './components/RecipeItem.jsx';
 import Past from './components/Past.jsx';
 
+var sampleData = [
+  {
+    "id":556470,
+    "title":"Apple fritters",
+    "image":"https://spoonacular.com/recipeImages/Apple-fritters-556470.jpg",
+    "imageType":"jpg",
+    "usedIngredientCount":3,
+    "missedIngredientCount":0,
+    "likes":243
+  },
+  {
+    "id":47950,
+    "title":"Cinnamon Apple Crisp",
+    "image":"https://spoonacular.com/recipeImages/cinnamon_apple_crisp-47950.jpg",
+    "imageType":"jpg",
+    "usedIngredientCount":3,
+    "missedIngredientCount":0,
+    "likes":35
+  },
+  {
+    "id":534573,
+    "title":"Brown Butter Apple Crumble",
+    "image":"https://spoonacular.com/recipeImages/Brown-Butter-Apple-Crumble-534573.jpg",
+    "imageType":"jpg",
+    "usedIngredientCount":3,
+    "missedIngredientCount":0,
+    "likes":7
+  },
+  {
+    "id":47732,
+    "title":"Apple Tart",
+    "image":"https://spoonacular.com/recipeImages/apple_tart-47732.jpg",
+    "imageType":"jpg",
+    "usedIngredientCount":3,
+    "missedIngredientCount":0,
+    "likes":0
+  },
+  {
+    "id":47891,
+    "title":"Apple Tart",
+    "image":"https://spoonacular.com/recipeImages/apple_tart-47891.jpg",
+    "imageType":"jpg",
+    "usedIngredientCount":3,
+    "missedIngredientCount":0,
+    "likes":0
+  }
+]
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = { 
       ingredients: [],
-      recipes: [{name: 'RECIPE 1'}, {name: 'RECIPE 2'}]
+      recipes: []
     }
   }
 
@@ -33,6 +80,7 @@ class App extends React.Component {
 
   search(ingredient) {
       console.log('BUTTON CLICK: ', ingredient);
+      this.setState({recipes: sampleData});
   }
 
   render () {
@@ -62,3 +110,4 @@ class App extends React.Component {
 }
 
 ReactDOM.render(<App />, document.getElementById('app'));
+

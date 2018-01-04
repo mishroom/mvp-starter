@@ -1,12 +1,12 @@
 import React from 'react';
 import RecipeItem from './RecipeItem.jsx';
 
-const RecipeList = (props) => (
+const RecipeList = (props) => {
+	console.log(props);
+	return (
   <div>
-    props.recipes is an array
-    
-    { props.recipes.map(recipe => <RecipeItem key={recipe.name} recipe={recipe}/>)}
+    { props.recipes.map(recipe => <RecipeItem key={recipe.id} recipe={recipe}/>)}
   </div>
-)
+)}
 
 export default RecipeList;
