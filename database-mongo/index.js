@@ -11,19 +11,21 @@ db.once('open', function() {
   console.log('mongoose connected successfully');
 });
 
-var itemSchema = mongoose.Schema({
-  quantity: Number,
-  description: String
+var likedSchema = mongoose.Schema({
+  id: Number, 
+  title: String,
+  image: String,
+  likes: Number
 });
 
-var Item = mongoose.model('Item', itemSchema);
+var Recipe = mongoose.model('Recipe', likedSchema);
 
-var newInstance = new Item ({
-  quantity: 3,
-  description: "blubb"
-});
+// var newInstance = new Recipe ({
+//   quantity: 3,
+//   description: "blubb"
+// });
 
-newInstance.save();
+// newInstance.save();
 
 var selectAll = function(callback) {
   Item.find({}, function(err, items) {
