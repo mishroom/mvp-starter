@@ -2,7 +2,10 @@ var express = require('express');
 var bodyParser = require('body-parser');
 // UNCOMMENT THE DATABASE YOU'D LIKE TO USE
 // var items = require('../database-mysql');
-// var items = require('../database-mongo');
+var items = require('../database-mongo');
+const RapidAPI = new require('rapidapi-connect');
+const rapid = new RapidAPI('refridgerraider_5a4e8c2fe4b038fa76c0cb61', 'a31eb21a-d1de-4cac-9150-9dc378c92bb9');
+
 
 var app = express();
 
