@@ -29,6 +29,10 @@ class App extends React.Component {
     });
   }
 
+  search() {
+    
+  }
+
   render () {
     return (
       <div id='parent'>
@@ -39,6 +43,7 @@ class App extends React.Component {
 
         <div class="search">
         <h3>Search</h3>
+        <Search onSearch={this.search.bind(this)}/>
         </div>
 
         <div class="results">
