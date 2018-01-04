@@ -14,11 +14,11 @@ img {
 
 }
 .results {
-float: left;
+	float: left;
     width: 50%;
 }
 .liked{
-float: left;
+	float: left;
     width: 50%;
 }
 
