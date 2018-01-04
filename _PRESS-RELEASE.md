@@ -18,27 +18,35 @@ Once the project moves into development, the press release can be used as a touc
  
 ## Heading ##
   > Name the product in a way the reader (i.e. your target customers) will understand.
+    RefridgerRaider
 
 ## Sub-Heading ##
   > Describe who the market for the product is and what benefit they get. One sentence only underneath the title.
+    The market audience is anyone who has food in the fridge, and doesnt know what to make. This app will take in a number of ingredients, and respond with recipes that include those ingredients
 
 ## Summary ##
   > Give a summary of the product and the benefit. Assume the reader will not read anything else so make this paragraph good.
+    This product will take an input of ingredients that you have sitting in your fridge, and will return a number of recipes that can be made using those ingredients.
 
 ## Problem ##
   > Describe the problem your product solves.
+    RefridgerRaider solves the problem of not knowing what to make for dinner, and/or introducing variety into meals. 
 
 ## Solution ##
   > Describe how your product elegantly solves the problem.
+    It returns a number of recipes that you can make from the ingredients in your fridge
 
 ## Quote from You ##
   > A quote from a spokesperson in your company.
+    This product dope af yo -CEO Mish
 
 ## How to Get Started ##
   > Describe how easy it is to get started.
+    Just enter the ingredients you have
 
 ## Customer Quote ##
   > Provide a quote from a hypothetical customer that describes how they experienced the benefit.
+    Wow such amazing -Hypothetical Customer
 
 ## Closing and Call to Action ##
   > Wrap it up and give pointers where the reader should go next.
