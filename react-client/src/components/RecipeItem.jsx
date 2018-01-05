@@ -17,6 +17,7 @@ class RecipeItem extends React.Component {
   }
 
   render() {
+    console.log("RECIPE  ",this.props)
     return (
       <div className='recipe'>
       <div className ='col'>

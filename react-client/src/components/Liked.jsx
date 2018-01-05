@@ -9,10 +9,38 @@ class Liked extends React.Component {
 	}
 
 	render() {
-		console.log(this.props.recipes);
-		return (
-			<div>
-			<div className='recipe'>
+		console.log(this.props);
+		if(this.props.recipe){
+			return (
+				<div>
+				LIKED VIDES HERE
+				<div className='recipe'>
+				<div className ='col'>
+				Recipe Name: { this.props.recipe.title }
+				Likes: { this.props.recipe.likes }
+				</div>
+				<div className ='col'>
+				<img src={ this.props.recipe.image } />
+				</div>
+				</div>
+				</div>
+
+				)
+		}
+		else {
+			return (
+				<div/>
+				)
+		}
+	}
+}
+
+export default Liked;
+
+
+/*
+
+<div className='recipe'>
 			<div className ='col'>
 			Recipe Name: { this.props.recipe.title }
 			Likes: { this.props.recipe.likes }
@@ -21,9 +49,5 @@ class Liked extends React.Component {
 			<img src={ this.props.recipe.image } />
 			</div>
 			</div>
-			</div>
-			)
-	}
-}
 
-export default Liked;
+*/

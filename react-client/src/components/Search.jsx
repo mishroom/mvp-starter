@@ -23,8 +23,12 @@ class Search extends React.Component{
 	render() {
 		return (
 			<div>
+
+			<div className="search">
+			<h3>Search</h3>
 			Enter an ingredient <input value={this.state.querys} onChange={this.onChange}/>       
 			<button onClick={this.search}> Search Recipes </button>
+			</div>
 			</div>
 			)
 	}

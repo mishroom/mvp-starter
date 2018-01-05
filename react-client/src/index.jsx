@@ -83,6 +83,7 @@ class App extends React.Component {
   search(ingredient) {
       console.log('SEARCHING RECIPES');
       this.setState({recipes: sampleData});
+      //DO API VOODOO
   }
 
   save(recipe) {
@@ -105,23 +106,20 @@ class App extends React.Component {
     return (
       <div id='parent'>
         <div className="header">
-        <h1>~ Welcome to ~</h1>
-        <h1>RefridgerRaider</h1>
+          <h1>~ Welcome to ~</h1>
+          <h1>RefridgerRaider</h1>
         </div>
-
-        <div className="search">
-        <h3>Search</h3>
         <Search onSearch={this.search.bind(this)}/>
-        </div>
+       
 
         <div className="results">
-        <h3>Recipes</h3>
-        <RecipeList recipes={this.state.recipes} onSave={this.save.bind(this)} />
+          <h3>Recipes</h3>
+          <RecipeList recipes={this.state.recipes} onSave={this.save.bind(this)} likedRecipes={this.state.likedRecipes} />
         </div>
 
         <div className="liked">
-        <h3>Saved Searches</h3>
-        <Liked recipes={this.state.likedRecipes}/>
+          <h3>Saved Searches</h3>
+          <Liked likedRecipes={this.state.likedRecipes} />
         </div>  
       </div>
     )
