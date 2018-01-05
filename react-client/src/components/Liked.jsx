@@ -5,7 +5,11 @@ class Liked extends React.Component {
 
 	constructor(props) {
 		super(props);
-		//this.save = this.save.bind(this);
+		this.delete = this.delete.bind(this);
+	}
+
+	delete() {
+		this.props.onDelete(this.props.recipe);
 	}
 
 	render() {
@@ -20,7 +24,7 @@ class Liked extends React.Component {
 						<div className ='col'>
 							<img src={ this.props.recipe.image } />
 						</div>
-						<button > Delete Recipe </button>
+						<button onClick={this.delete}> Delete Recipe </button>
 				</div>
 
 				)

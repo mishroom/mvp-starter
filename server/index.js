@@ -17,8 +17,11 @@ app.post('/storage', function (req, res) {
     console.log("RECIPE RECEIVED BY SERVER");
 
     req.on('data', function(data){
-
-        if(typeof JSON.parse(data.toString()) === 'object'){
+      console.log(JSON.parse(data.toString()));
+        if(data.type === "delete") {
+          console.log('DELEEEETE')
+        }
+        else if(typeof JSON.parse(data.toString()) === 'object'){
             items.saveRecipe(JSON.parse(data.toString()));
             res.end();
         } 
@@ -35,6 +38,7 @@ app.post('/storage', function (req, res) {
                 res.end(JSON.stringify(result.body));
             });
         }
+        res.end();
     })
     
 });

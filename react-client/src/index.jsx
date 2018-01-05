@@ -115,6 +115,25 @@ class App extends React.Component {
     })
   }
 
+  delete (recipe) {
+    console.log('DELETE RECIPE', recipe);
+    $.ajax({
+      url: `http://localhost:3000/storage`,
+      type: 'POST',
+      //contentType: 'application/json',
+      data: {
+        type: 'delete',
+        recipe: recipe
+      },
+      success: (data) => {
+        // console.log("RECIPE SENT", data);
+      },
+      error: (err) => {
+        console.error(err);
+      }
+    })
+  }
+
   render () {
     return (
       <div id='parent'>
@@ -123,7 +142,7 @@ class App extends React.Component {
           <h1>RefridgerRaider</h1>
         </div>
         <Search onSearch={this.search.bind(this)}/>
-       <RecipeList likedRecipes={this.state.likedRecipes} recipes={this.state.recipes} onSave={this.save.bind(this)}  />
+       <RecipeList likedRecipes={this.state.likedRecipes} recipes={this.state.recipes} onSave={this.save.bind(this)} onDelete={this.delete.bind(this)} />
 
         
 
