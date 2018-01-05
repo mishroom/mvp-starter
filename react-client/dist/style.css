@@ -34,3 +34,11 @@ img {
 	margin-bottom:10px;
 	border-radius: 15px;
 }
+.likedRecipe {
+	box-sizing: border-box;
+	width: 90%;
+	border: solid white 5px;
+	padding: 5px;
+	margin-bottom:10px;
+	border-radius: 15px;
+}

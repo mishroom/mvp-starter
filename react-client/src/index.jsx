@@ -110,7 +110,7 @@ class App extends React.Component {
           <h1>RefridgerRaider</h1>
         </div>
         <Search onSearch={this.search.bind(this)}/>
-       <RecipeList recipes={this.state.recipes} onSave={this.save.bind(this)} likedRecipes={this.state.likedRecipes} />
+       <RecipeList likedRecipes={this.state.likedRecipes} recipes={this.state.recipes} onSave={this.save.bind(this)}  />
 
         
 
