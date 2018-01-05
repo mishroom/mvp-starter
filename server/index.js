@@ -10,12 +10,11 @@ const rapid = new RapidAPI('refridgerraider_5a4e8c2fe4b038fa76c0cb61', 'a31eb21a
 
 var app = express();
 
-// UNCOMMENT FOR REACT
- app.use(express.static(__dirname + '/../react-client/dist'));
+app.use(express.static(__dirname + '/../react-client/dist'));
 
-// UNCOMMENT FOR ANGULAR
-// app.use(express.static(__dirname + '/../angular-client'));
-// app.use(express.static(__dirname + '/../node_modules'));
+app.post('/storage', function (req, res) {
+
+});
 
 app.get('/storage', function (req, res) {
   items.selectAll(function(err, data) {

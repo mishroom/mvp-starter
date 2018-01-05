@@ -1,16 +1,33 @@
 import React from 'react';
 
-const RecipeItem = (props) => (
-  <div className='recipe'>
-  	<div className ='col'>
-	    Recipe Name: { props.recipe.title }
-	    Likes: { props.recipe.likes }
-    </div>
-    <div className ='col'>
-    <img src={ props.recipe.image } />
-    </div>
-    <button > Save Recipe </button>
-  </div>
-)
+class RecipeItem extends React.Component {
 
-export default RecipeItem;
+  constructor(props) {
+    super(props);
+    // this.state = {
+    //   query: ""
+    // }
+    this.save = this.save.bind(this);
+  }
+
+
+  save() {
+    this.props.onSave();
+  }
+
+  render() {
+    return (
+      <div className='recipe'>
+      <div className ='col'>
+      Recipe Name: { this.props.recipe.title }
+      Likes: { this.props.recipe.likes }
+      </div>
+      <div className ='col'>
+      <img src={ this.props.recipe.image } />
+      </div>
+      <button onClick={this.save}> Save Recipe </button>
+      </div>
+      )}
+  }
+
+  export default RecipeItem;

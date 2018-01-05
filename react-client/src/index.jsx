@@ -5,7 +5,7 @@ import $ from 'jquery';
 import Search from './components/Search.jsx';
 import RecipeList from './components/RecipeList.jsx';
 import RecipeItems from './components/RecipeItem.jsx';
-import Liked from './components/Past.jsx';
+import Liked from './components/Liked.jsx';
 // import StyleSheet from './../dist/style.css';
 
 var sampleData = [
@@ -67,10 +67,10 @@ class App extends React.Component {
 
   componentDidMount() {
     $.ajax({
-      url: '/items', 
+      url: '/storage', 
       success: (data) => {
         this.setState({
-          items: data
+          recipes: data
         })
       },
       error: (err) => {
@@ -80,8 +80,11 @@ class App extends React.Component {
   }
 
   search(ingredient) {
-      console.log('BUTTON CLICK: ', ingredient);
       this.setState({recipes: sampleData});
+  }
+
+  save() {
+      console.log("SAVE RECIPE");
   }
 
   render () {
@@ -99,11 +102,11 @@ class App extends React.Component {
 
         <div className="results">
         <h3>Recipes</h3>
-        <RecipeList recipes={this.state.recipes}/>
+        <RecipeList recipes={this.state.recipes} onSave={this.save.bind(this)} />
         </div>
 
         <div className="liked">
-        <h3>Liked Searches</h3>
+        <h3>Saved Searches</h3>
         </div>  
       </div>
     )

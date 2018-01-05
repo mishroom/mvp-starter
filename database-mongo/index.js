@@ -28,7 +28,7 @@ var Recipe = mongoose.model('Recipe', likedSchema);
 // newInstance.save();
 
 var selectAll = function(callback) {
-  Item.find({}, function(err, items) {
+  Recipe.find({}, function(err, items) {
     if(err) {
       callback(err, null);
     } else {
