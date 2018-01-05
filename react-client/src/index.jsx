@@ -87,7 +87,7 @@ class App extends React.Component {
       $.ajax({
       url: `http://localhost:3000/storage`,
       type: 'POST',
-      //contentType: 'application/json',
+      contentType: 'text/plain',
       data: JSON.stringify(ingredient),
       success: (data) => {
         console.log("Query SENT", data);

@@ -18,25 +18,27 @@ app.post('/storage', function (req, res) {
 
     req.on('data', function(data){
       console.log(JSON.parse(data.toString()));
-        if(data.type === "delete") {
-          console.log('DELEEEETE')
-        }
-        else if(typeof JSON.parse(data.toString()) === 'object'){
+        // if(data.type === "delete") {
+        //   console.log('DELEEEETE')
+        // }
+        // else 
+          if(typeof JSON.parse(data.toString()) === 'object'){
             items.saveRecipe(JSON.parse(data.toString()));
             res.end();
         } 
         else if (typeof JSON.parse(data.toString()) === 'string') {
-            var query = JSON.parse(data.toString());
-            query = query.split(',').join('%2C');
-            //connect to API 
-            unirest.get(`https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/findByIngredients?fillIngredients=false&ingredients=${query}&limitLicense=false&number=5&ranking=1`)
-            .header("X-Mashape-Key", "y8p0We0kS8mshZXRWGLWEQWduPRZp115RAsjsn4XvamU1HNo8g")
-            .header("X-Mashape-Host", "spoonacular-recipe-food-nutrition-v1.p.mashape.com")
-            .end(function (result) {
-                console.log(result.body);
-                // res.write ()
-                res.end(JSON.stringify(result.body));
-            });
+            // var query = JSON.parse(data.toString());
+            // query = query.split(',').join('%2C');
+            // //connect to API 
+            // unirest.get(`https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/findByIngredients?fillIngredients=false&ingredients=${query}&limitLicense=false&number=5&ranking=1`)
+            // .header("X-Mashape-Key", "y8p0We0kS8mshZXRWGLWEQWduPRZp115RAsjsn4XvamU1HNo8g")
+            // .header("X-Mashape-Host", "spoonacular-recipe-food-nutrition-v1.p.mashape.com")
+            // .end(function (result) {
+            //     console.log(result.body);
+            //     // res.write ()
+            //     res.end(JSON.stringify(result.body));
+            // });
+            res.end(JSON.stringify(sampleData));
         }
         res.end();
     })
@@ -62,4 +64,53 @@ app.get('/storage', function (req, res) {
 app.listen(3000, function() {
   console.log('listening on port 3000!');
 });
+
+
+var sampleData = [
+  {
+    "id":556470,
+    "title":"Apple fritters",
+    "image":"https://spoonacular.com/recipeImages/Apple-fritters-556470.jpg",
+    "imageType":"jpg",
+    "usedIngredientCount":3,
+    "missedIngredientCount":0,
+    "likes":243
+  },
+  {
+    "id":47950,
+    "title":"Cinnamon Apple Crisp",
+    "image":"https://spoonacular.com/recipeImages/cinnamon_apple_crisp-47950.jpg",
+    "imageType":"jpg",
+    "usedIngredientCount":3,
+    "missedIngredientCount":0,
+    "likes":35
+  },
+  {
+    "id":534573,
+    "title":"Brown Butter Apple Crumble",
+    "image":"https://spoonacular.com/recipeImages/Brown-Butter-Apple-Crumble-534573.jpg",
+    "imageType":"jpg",
+    "usedIngredientCount":3,
+    "missedIngredientCount":0,
+    "likes":7
+  },
+  {
+    "id":47732,
+    "title":"Apple Tart",
+    "image":"https://spoonacular.com/recipeImages/apple_tart-47732.jpg",
+    "imageType":"jpg",
+    "usedIngredientCount":3,
+    "missedIngredientCount":0,
+    "likes":0
+  },
+  {
+    "id":47891,
+    "title":"Apple Tart",
+    "image":"https://spoonacular.com/recipeImages/apple_tart-47891.jpg",
+    "imageType":"jpg",
+    "usedIngredientCount":3,
+    "missedIngredientCount":0,
+    "likes":0
+  }
+]
 
