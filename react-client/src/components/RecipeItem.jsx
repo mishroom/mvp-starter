@@ -1,4 +1,5 @@
 import React from 'react';
+import AdditionalIngredients from './AdditionalIngredients.jsx';
 
 class RecipeItem extends React.Component {
 
@@ -18,21 +19,23 @@ class RecipeItem extends React.Component {
 
   render() {
     var link =  this.props.recipe.image.slice(0,23) + this.props.recipe.image.slice(36)
-    return (
-      <div className='recipe'>
-        <div className ='col'>
-          Name: <a href={ link.slice(0,-4) } target="_blank">{ this.props.recipe.title }</a><br />
-          Likes: { this.props.recipe.likes } <br />
-          Additional Ingredients: {this.props.recipe.missedIngredientCount} <br />
-          Unused Ingredients: {this.props.recipe.unusedIngredients.length}
+      return (
+        <div className='recipe'>
+          <div className ='col'>
+            Name: <a href={ link.slice(0,-4) } target="_blank">{ this.props.recipe.title }</a><br />
+            Likes: { this.props.recipe.likes } <br />
+            Unused Ingredients: {this.props.recipe.unusedIngredients.length} <br />
+            Additional Ingredients: {this.props.recipe.missedIngredientCount} <br />
+            {this.props.recipe.missedIngredients.map(ingredient => <AdditionalIngredients key={ingredient.id} name={ingredient.name} /> )}
+          </div>
+          <div className ='col'>
+            <img src={ this.props.recipe.image } />
+
+          </div>
+          <button onClick={this.save} > Save Recipe </button>
         </div>
-        <div className ='col'>
-          <img src={ this.props.recipe.image } />
-          
-        </div>
-        <button onClick={this.save} > Save Recipe </button>
-      </div>
-      )}
+      )
+    }
   }
 
   export default RecipeItem;
