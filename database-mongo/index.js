@@ -33,13 +33,7 @@ var Recipe = mongoose.model('Recipe', likedSchema);
 var saveRecipe = function(recipe) {
   console.log("RECIPE IN DB: ",recipe);
   var newRecipe = new Recipe(recipe);
-  Recipe.save(newRecipe, function (err, data){
-    if(err){
-      callback(err);
-    } else {
-      callback(null, data);
-    }
-  })
+  newRecipe.save();
 }
 
 var selectAll = function(callback) {
