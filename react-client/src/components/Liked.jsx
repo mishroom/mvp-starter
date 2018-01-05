@@ -20,7 +20,7 @@ class Liked extends React.Component {
 			return (
 				<div className='likedRecipe'>
 						<div className ='col'>
-							Name: <a href={ link.slice(0,-4) }>{ this.props.recipe.title } </a><br />
+							Name: <a href={ link.slice(0,-4) } target="_blank">{ this.props.recipe.title }</a><br />
 							Likes: { this.props.recipe.likes }
 						</div>
 						<div className ='col'>

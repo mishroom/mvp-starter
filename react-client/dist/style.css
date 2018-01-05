@@ -3,7 +3,7 @@ body {
 }
 
 img {
-	width: 50%;
+	width: 70%;
 }
 
 .header {
@@ -49,6 +49,6 @@ img {
 	overflow: auto;
 }
 .radio{
-	width:30%;
+	width: auto;
 	float: left;
 }

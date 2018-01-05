@@ -21,11 +21,14 @@ class RecipeItem extends React.Component {
     return (
       <div className='recipe'>
         <div className ='col'>
-          Name: <a href={ link.slice(0,-4) } target="_blank">{ this.props.recipe.title } </a><br />
+          Name: <a href={ link.slice(0,-4) } target="_blank">{ this.props.recipe.title }</a><br />
           Likes: { this.props.recipe.likes } <br />
+          Additional Ingredients: {this.props.recipe.missedIngredientCount} <br />
+          Unused Ingredients: {this.props.recipe.unusedIngredients.length}
         </div>
         <div className ='col'>
           <img src={ this.props.recipe.image } />
+          
         </div>
         <button onClick={this.save} > Save Recipe </button>
       </div>

@@ -62,7 +62,8 @@ class App extends React.Component {
     this.state = { 
       ingredients: [],
       recipes: [],
-      likedRecipes: []
+      likedRecipes: [],
+      selectedOption: '',
     }
   }
 
@@ -82,6 +83,10 @@ class App extends React.Component {
 
   componentDidMount() {
     this.getLikedRecipes();
+  }
+
+  filter () {
+    alert('FILTER BUTTON CLICKED');
   }
 
   search(ingredient) {
@@ -147,7 +152,7 @@ class App extends React.Component {
           <h1>RefridgerRaider</h1>
         </div>
         <Search onSearch={this.search.bind(this)}/>
-       <RecipeList likedRecipes={this.state.likedRecipes} recipes={this.state.recipes} onSave={this.save.bind(this)} onDelete={this.delete.bind(this)} />
+       <RecipeList likedRecipes={this.state.likedRecipes} recipes={this.state.recipes} selectedOption={this.state.selectedOption} onSave={this.save.bind(this)} onDelete={this.delete.bind(this)} onChange={this.filter.bind(this)}/>
 
         
 
