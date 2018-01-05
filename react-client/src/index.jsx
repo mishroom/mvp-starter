@@ -85,7 +85,8 @@ class App extends React.Component {
     this.getLikedRecipes();
   }
 
-  filter () {
+  filter (e) {
+    this.setState({selectedOption: e.target.value})
     alert('FILTER BUTTON CLICKED');
   }
 

@@ -8,8 +8,8 @@ class RecipeList extends React.Component {
     this.filter = this.filter.bind(this);
   }
 
-  filter() {
-    this.props.onChange();
+  filter(e) {
+    this.props.onChange(e);
   }
 render() {
   return (
