@@ -36,6 +36,10 @@ var saveRecipe = function(recipe) {
   newRecipe.save();
 }
 
+var deleteRecipe = function (recipe) {
+  Recipe.find(recipe).remove().exec();
+}
+
 var selectAll = function(callback) {
   Recipe.find({}, function(err, items) {
     if(err) {

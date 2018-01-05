@@ -20,7 +20,29 @@ app.post('/storage', function (req, res) {
       console.log('POST DATA:  ',JSON.parse(data.toString()));
       var dataObj = JSON.parse(data.toString());
         if(dataObj.type === "delete") {
+
           console.log('DELEEEETE')
+
+        } else if (dataObj.type === 'save'){
+
+          items.saveRecipe(dataObj.recipe);
+          res.end();
+
+        } else if (dataObj.type === 'search') {
+
+            //    var query = JSON.parse(data.toString());
+            // query = query.split(',').join('%2C');
+            // //connect to API 
+            // unirest.get(`https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/findByIngredients?fillIngredients=false&ingredients=${query}&limitLicense=false&number=5&ranking=1`)
+            // .header("X-Mashape-Key", "y8p0We0kS8mshZXRWGLWEQWduPRZp115RAsjsn4XvamU1HNo8g")
+            // .header("X-Mashape-Host", "spoonacular-recipe-food-nutrition-v1.p.mashape.com")
+            // .end(function (result) {
+            //     console.log(result.body);
+            //     // res.write ()
+            //     res.end(JSON.stringify(result.body));
+            // });
+            res.end(JSON.stringify(sampleData));
+
         }
         // else 
         //   if(typeof JSON.parse(data.toString()) === 'object'){

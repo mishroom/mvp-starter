@@ -87,8 +87,12 @@ class App extends React.Component {
       $.ajax({
       url: `http://localhost:3000/storage`,
       type: 'POST',
-      contentType: 'text/plain',
-      data: ingredient,
+      // contentType: 'text/plain',
+      // data: ingredient,
+      data: JSON.stringify({
+        type: 'search',
+        ingredient: JSON.stringify(ingredient)
+      }),
       success: (data) => {
         // console.log("Query SENT", data);
         this.setState({recipes: JSON.parse(data)});
@@ -106,10 +110,10 @@ class App extends React.Component {
       type: 'POST',
       //contentType: 'application/json',
       // data: JSON.stringify(recipe),
-       data: {
+       data: JSON.stringify({
         type: 'save',
-        recipe: JSON.stringify(recipe)
-      },
+        recipe: recipe
+      }),
       success: (data) => {
         // console.log("RECIPE SENT", data);
       },
@@ -127,7 +131,7 @@ class App extends React.Component {
       contentType: 'application/json',
       data: JSON.stringify({
         type: 'delete',
-        recipe: JSON.stringify(recipe)
+        recipe: recipe
       }),
       success: (data) => {
         // console.log("RECIPE SENT", data);
