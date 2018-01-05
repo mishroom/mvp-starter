@@ -75,8 +75,8 @@ sampleData = [
   "title":"Cinnamon Apple Crisp",
   "image":"https://spoonacular.com/recipeImages/cinnamon_apple_crisp-47950.jpg",
   "imageType":"jpg",
-  "usedIngredientCount":1,
-  "missedIngredientCount":2,
+  "usedIngredientCount":0,
+  "missedIngredientCount":0,
   "missedIngredients":[
   {
     "id":93674,

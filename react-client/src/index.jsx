@@ -100,6 +100,12 @@ class App extends React.Component {
         })
       });
     }
+    if(e.target.value === 'Additional'){
+      this.setState({recipes: this.state.recipes.sort(function (a, b) {
+        return a.missedIngredientCount - b.missedIngredientCount
+        })
+      });
+    }
   }
 
   search(ingredient) {
