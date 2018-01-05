@@ -66,7 +66,7 @@ class App extends React.Component {
     }
   }
 
-  componentDidMount() {
+  getLikedRecipes() {
     $.ajax({
       url: '/storage', 
       success: (data) => {
@@ -80,10 +80,11 @@ class App extends React.Component {
     });
   }
 
+  componentDidMount() {
+    this.getLikedRecipes();
+  }
+
   search(ingredient) {
-      // console.log('SEARCHING RECIPES');
-      
-      //DO API VOODOO
       $.ajax({
       url: `http://localhost:3000/storage`,
       type: 'POST',
@@ -93,7 +94,6 @@ class App extends React.Component {
         query: ingredient
       }),
       success: (data) => {
-        console.log("Query Received", data);
         this.setState({recipes: JSON.parse(data)});
       },
       error: (err) => {
@@ -103,7 +103,6 @@ class App extends React.Component {
   }
 
   save(recipe) {
-      // console.log("SAVE RECIPE: ", recipe);
       $.ajax({
       url: `http://localhost:3000/storage`,
       type: 'POST',
@@ -113,7 +112,7 @@ class App extends React.Component {
         recipe: recipe
       }),
       success: (data) => {
-        // console.log("RECIPE SENT", data);
+        this.getLikedRecipes();
       },
       error: (err) => {
         console.error(err);
@@ -122,7 +121,6 @@ class App extends React.Component {
   }
 
   delete (recipe) {
-    console.log('DELETE RECIPE', recipe);
     $.ajax({
       url: `http://localhost:3000/storage`,
       type: 'POST',
@@ -133,6 +131,7 @@ class App extends React.Component {
       }),
       success: (data) => {
         // console.log("RECIPE SENT", data);
+        this.getLikedRecipes();
       },
       error: (err) => {
         console.error(err);
