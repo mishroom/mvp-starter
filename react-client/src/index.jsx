@@ -81,7 +81,7 @@ class App extends React.Component {
   }
 
   search(ingredient) {
-      console.log('SEARCHING RECIPES');
+      // console.log('SEARCHING RECIPES');
       
       //DO API VOODOO
       $.ajax({
@@ -90,8 +90,8 @@ class App extends React.Component {
       //contentType: 'application/json',
       data: JSON.stringify(ingredient),
       success: (data) => {
-        console.log("RECIPE SENT", data);
-        this.setState({recipes: sampleData});
+        console.log("Query SENT", data);
+        this.setState({recipes: JSON.parse(data)});
       },
       error: (err) => {
         console.error(err);
@@ -107,7 +107,7 @@ class App extends React.Component {
       //contentType: 'application/json',
       data: JSON.stringify(recipe),
       success: (data) => {
-        console.log("RECIPE SENT", data);
+        // console.log("RECIPE SENT", data);
       },
       error: (err) => {
         console.error(err);
