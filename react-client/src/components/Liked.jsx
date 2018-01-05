@@ -10,7 +10,7 @@ class Liked extends React.Component {
 
 	render() {
 		console.log(this.props);
-		if(this.props.recipe){
+		// if(this.props.recipe){
 			return (
 				<div>
 				LIKED VIDES HERE
@@ -26,12 +26,12 @@ class Liked extends React.Component {
 				</div>
 
 				)
-		}
-		else {
-			return (
-				<div/>
-				)
-		}
+		// }
+		// else {
+		// 	return (
+		// 		<div/>
+		// 		)
+		// }
 	}
 }
 

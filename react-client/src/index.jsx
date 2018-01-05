@@ -5,7 +5,7 @@ import $ from 'jquery';
 import Search from './components/Search.jsx';
 import RecipeList from './components/RecipeList.jsx';
 import RecipeItems from './components/RecipeItem.jsx';
-import Liked from './components/Liked.jsx';
+
 // import StyleSheet from './../dist/style.css';
 
 var sampleData = [
@@ -110,17 +110,11 @@ class App extends React.Component {
           <h1>RefridgerRaider</h1>
         </div>
         <Search onSearch={this.search.bind(this)}/>
-       
+       <RecipeList recipes={this.state.recipes} onSave={this.save.bind(this)} likedRecipes={this.state.likedRecipes} />
 
-        <div className="results">
-          <h3>Recipes</h3>
-          <RecipeList recipes={this.state.recipes} onSave={this.save.bind(this)} likedRecipes={this.state.likedRecipes} />
-        </div>
+        
 
-        <div className="liked">
-          <h3>Saved Searches</h3>
-          <Liked likedRecipes={this.state.likedRecipes} />
-        </div>  
+        
       </div>
     )
   }
