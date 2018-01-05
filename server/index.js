@@ -13,11 +13,16 @@ var app = express();
 app.use(express.static(__dirname + '/../react-client/dist'));
 
 app.post('/storage', function (req, res) {
+
     console.log("RECIPE RECEIVED BY SERVER");
+
     req.on('data', function(data){
-        // console.log(data.toString());
-        if(data){
+
+        if(typeof JSON.parse(data.toString()) === 'object'){
             items.saveRecipe(JSON.parse(data.toString()));
+        } 
+        else if (typeof JSON.parse(data.toString()) === 'string') {
+            console.log(typeof JSON.parse(data.toString()));
         }
     })
     res.end();

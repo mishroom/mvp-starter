@@ -82,8 +82,21 @@ class App extends React.Component {
 
   search(ingredient) {
       console.log('SEARCHING RECIPES');
-      this.setState({recipes: sampleData});
+      
       //DO API VOODOO
+      $.ajax({
+      url: `http://localhost:3000/storage`,
+      type: 'POST',
+      //contentType: 'application/json',
+      data: JSON.stringify(ingredient),
+      success: (data) => {
+        console.log("RECIPE SENT", data);
+        this.setState({recipes: sampleData});
+      },
+      error: (err) => {
+        console.error(err);
+      }
+    })
   }
 
   save(recipe) {

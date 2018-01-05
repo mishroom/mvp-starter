@@ -12,12 +12,12 @@ class RecipeItem extends React.Component {
     // this.setState({
     //   recipe: e.target
     // });
-    console.log("THIS:  ",this);
+    // console.log("THIS:  ",this);
     this.props.onSave(this.props.recipe);
   }
 
   render() {
-    console.log("RECIPE  ",this.props)
+    // console.log("RECIPE  ",this.props)
     return (
       <div className='recipe'>
         <div className ='col'>
