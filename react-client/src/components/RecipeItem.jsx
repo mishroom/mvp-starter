@@ -21,7 +21,7 @@ class RecipeItem extends React.Component {
     return (
       <div className='recipe'>
         <div className ='col'>
-          Recipe Name: { this.props.recipe.title }
+          Recipe Name: { this.props.recipe.title } <br />
           Likes: { this.props.recipe.likes }
         </div>
         <div className ='col'>
