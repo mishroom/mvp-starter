@@ -86,6 +86,18 @@ class App extends React.Component {
 
   save(recipe) {
       console.log("SAVE RECIPE: ", recipe);
+      $.ajax({
+      url: `http://localhost:3000/storage`,
+      type: 'POST',
+      //contentType: 'application/json',
+      data: JSON.stringify(recipe),
+      success: (data) => {
+        console.log("RECIPE SENT", data);
+      },
+      error: (err) => {
+        console.error(err);
+      }
+    })
   }
 
   render () {

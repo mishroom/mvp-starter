@@ -13,7 +13,14 @@ var app = express();
 app.use(express.static(__dirname + '/../react-client/dist'));
 
 app.post('/storage', function (req, res) {
-
+    console.log("RECIPE RECEIVED BY SERVER");
+    req.on('data', function(data){
+        // console.log(data.toString());
+        if(data){
+            items.saveRecipe(JSON.parse(data.toString()));
+        }
+    })
+    res.end();
 });
 
 app.get('/storage', function (req, res) {

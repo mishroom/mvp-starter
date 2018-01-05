@@ -15,6 +15,9 @@ var likedSchema = mongoose.Schema({
   id: Number, 
   title: String,
   image: String,
+  imageType: String,
+  usedIngredientCount: Number,
+  missedIngredientCount: Number,
   likes: Number
 });
 
@@ -27,7 +30,8 @@ var Recipe = mongoose.model('Recipe', likedSchema);
 
 // newInstance.save();
 
-var saveRecipe = function(recipe, callback) {
+var saveRecipe = function(recipe) {
+  console.log("RECIPE IN DB: ",recipe);
   var newRecipe = new Recipe(recipe);
   Recipe.save(newRecipe, function (err, data){
     if(err){
