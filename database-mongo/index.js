@@ -31,7 +31,6 @@ var Recipe = mongoose.model('Recipe', likedSchema);
 // newInstance.save();
 
 var saveRecipe = function(recipe) {
-  console.log("RECIPE IN DB: ",recipe);
   var newRecipe = new Recipe(recipe);
   newRecipe.save();
 }

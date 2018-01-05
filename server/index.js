@@ -14,7 +14,7 @@ app.use(express.static(__dirname + '/../react-client/dist'));
 
 app.post('/storage', function (req, res) {
 
-  console.log("RECIPE RECEIVED BY SERVER");
+  // console.log("RECIPE RECEIVED BY SERVER");
 
   req.on('data', function(data){
     var dataObj = JSON.parse(data.toString());
@@ -32,7 +32,6 @@ app.post('/storage', function (req, res) {
 
       var query = dataObj.query;
       query = query.split(',').join('%2C');
-      console.log(query);
             //connect to API 
             // unirest.get(`https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/findByIngredients?fillIngredients=false&ingredients=${query}&limitLicense=false&number=5&ranking=1`)
             // .header("X-Mashape-Key", "y8p0We0kS8mshZXRWGLWEQWduPRZp115RAsjsn4XvamU1HNo8g")
