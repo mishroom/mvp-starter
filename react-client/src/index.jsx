@@ -61,7 +61,8 @@ class App extends React.Component {
     super(props);
     this.state = { 
       ingredients: [],
-      recipes: []
+      recipes: [],
+      likedRecipes: []
     }
   }
 
@@ -70,7 +71,7 @@ class App extends React.Component {
       url: '/storage', 
       success: (data) => {
         this.setState({
-          recipes: data
+          likedRecipes: data
         })
       },
       error: (err) => {
@@ -120,7 +121,7 @@ class App extends React.Component {
 
         <div className="liked">
         <h3>Saved Searches</h3>
-        <Liked />
+        <Liked recipes={this.state.likedRecipes}/>
         </div>  
       </div>
     )
