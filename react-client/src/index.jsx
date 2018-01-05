@@ -120,6 +120,7 @@ class App extends React.Component {
 
         <div className="liked">
         <h3>Saved Searches</h3>
+        <Liked />
         </div>  
       </div>
     )
