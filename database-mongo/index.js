@@ -52,3 +52,4 @@ var selectAll = function(callback) {
 
 module.exports.selectAll = selectAll;
 module.exports.saveRecipe = saveRecipe;
+module.exports.deleteRecipe = deleteRecipe;

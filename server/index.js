@@ -20,7 +20,7 @@ app.post('/storage', function (req, res) {
       console.log('POST DATA:  ',JSON.parse(data.toString()));
       var dataObj = JSON.parse(data.toString());
         if(dataObj.type === "delete") {
-
+          items.deleteRecipe(dataObj.recipe);
           console.log('DELEEEETE')
 
         } else if (dataObj.type === 'save'){
