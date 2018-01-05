@@ -24,7 +24,7 @@ class Search extends React.Component{
 		return (
 			<div>
 			Enter an ingredient <input value={this.state.querys} onChange={this.onChange}/>       
-			<button onClick={this.search}> Add Ingredent </button>
+			<button onClick={this.search}> Search Recipes </button>
 			</div>
 			)
 	}

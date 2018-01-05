@@ -80,6 +80,7 @@ class App extends React.Component {
   }
 
   search(ingredient) {
+      console.log('SEARCHING RECIPES');
       this.setState({recipes: sampleData});
   }
 

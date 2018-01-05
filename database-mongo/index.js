@@ -27,6 +27,17 @@ var Recipe = mongoose.model('Recipe', likedSchema);
 
 // newInstance.save();
 
+var saveRecipe = function(recipe, callback) {
+  var newRecipe = new Recipe(recipe);
+  Recipe.save(newRecipe, function (err, data){
+    if(err){
+      callback(err);
+    } else {
+      callback(null, data);
+    }
+  })
+}
+
 var selectAll = function(callback) {
   Recipe.find({}, function(err, items) {
     if(err) {
