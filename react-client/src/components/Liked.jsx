@@ -20,6 +20,7 @@ class Liked extends React.Component {
 						<div className ='col'>
 							<img src={ this.props.recipe.image } />
 						</div>
+						<button > Delete Recipe </button>
 				</div>
 
 				)
