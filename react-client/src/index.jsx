@@ -94,6 +94,12 @@ class App extends React.Component {
         })
       });
     }
+    if(e.target.value === 'Unused'){
+      this.setState({recipes: this.state.recipes.sort(function (a, b) {
+        return a.unusedIngredients.length - b.unusedIngredients.length
+        })
+      });
+    }
   }
 
   search(ingredient) {

@@ -33,7 +33,7 @@ app.post('/storage', function (req, res) {
       var query = dataObj.query;
       query = query.split(',').join('%2C');
             //connect to API 
-            // unirest.get(`https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/findByIngredients?fillIngredients=false&ingredients=${query}&limitLicense=false&number=5&ranking=1`)
+            // unirest.get(`https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/findByIngredients?fillIngredients=false&ingredients=${query}&limitLicense=false&number=10&ranking=1`)
             // .header("X-Mashape-Key", "y8p0We0kS8mshZXRWGLWEQWduPRZp115RAsjsn4XvamU1HNo8g")
             // .header("X-Mashape-Host", "spoonacular-recipe-food-nutrition-v1.p.mashape.com")
             // .end(function (result) {
