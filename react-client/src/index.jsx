@@ -86,8 +86,14 @@ class App extends React.Component {
   }
 
   filter (e) {
-    this.setState({selectedOption: e.target.value})
-    alert('FILTER BUTTON CLICKED');
+    this.setState({selectedOption: e.target.value});
+    //alert(e.target.value);
+    if(e.target.value === 'MostPopular'){
+      this.setState({recipes: this.state.recipes.sort(function (a, b) {
+        return b.likes - a.likes
+        })
+      });
+    }
   }
 
   search(ingredient) {

@@ -21,24 +21,24 @@ render() {
 		<div className="radio">
           <label>
 
-            <input type="radio" value="option1" 
-                   checked={this.props.selectedOption === 'option1'} 
+            <input type="radio" value="MostPopular" 
+                   checked={this.props.selectedOption === 'MostPopular'} 
                    onChange={this.filter} />
             Most Popular  
           </label>
         </div>
         <div className="radio">
           <label>
-            <input type="radio" value="option2" 
-                   checked={this.props.selectedOption === 'option2'} 
+            <input type="radio" value="Unused" 
+                   checked={this.props.selectedOption === 'Unused'} 
                    onChange={this.filter} />
             Unused Ingredients  
           </label>
         </div>
         <div className="radio">
           <label>
-            <input type="radio" value="option3" 
-                   checked={this.props.selectedOption === 'option3'} 
+            <input type="radio" value="Additional" 
+                   checked={this.props.selectedOption === 'Additional'} 
                    onChange={this.filter} />
             Additional Ingredients  
           </label>
