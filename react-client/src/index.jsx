@@ -84,8 +84,8 @@ class App extends React.Component {
       this.setState({recipes: sampleData});
   }
 
-  save() {
-      console.log("SAVE RECIPE");
+  save(recipe) {
+      console.log("SAVE RECIPE: ", recipe);
   }
 
   render () {

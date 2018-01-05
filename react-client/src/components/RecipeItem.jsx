@@ -4,15 +4,16 @@ class RecipeItem extends React.Component {
 
   constructor(props) {
     super(props);
-    // this.state = {
-    //   query: ""
-    // }
     this.save = this.save.bind(this);
   }
 
 
   save() {
-    this.props.onSave();
+    // this.setState({
+    //   recipe: e.target
+    // });
+    console.log("THIS:  ",this);
+    this.props.onSave(this.props.recipe);
   }
 
   render() {
@@ -25,7 +26,7 @@ class RecipeItem extends React.Component {
       <div className ='col'>
       <img src={ this.props.recipe.image } />
       </div>
-      <button onClick={this.save}> Save Recipe </button>
+      <button onClick={this.save} > Save Recipe </button>
       </div>
       )}
   }
