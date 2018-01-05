@@ -13,7 +13,7 @@ const RecipeList = (props) => (
 	<div className="liked">
 	<h3>Saved Searches</h3>
 	{props.likedRecipes.map(recipe => <Liked key={recipe.id} recipe={recipe} />)}
-	
+
 	</div>  
 
 	</div>
