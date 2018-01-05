@@ -52,6 +52,7 @@ render() {
 
 	<div className="liked">
 	<h3>Saved Recipes</h3>
+  <button onClick={this.save} > Download as CSV </button>
 	{this.props.likedRecipes.map(recipe => <Liked key={recipe.id} recipe={recipe} onDelete={this.props.onDelete} />)}
 
 	</div>  
