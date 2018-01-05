@@ -64,6 +64,7 @@ class App extends React.Component {
       recipes: [],
       likedRecipes: [],
       selectedOption: '',
+      doubleClick: true,
     }
   }
 
@@ -86,23 +87,38 @@ class App extends React.Component {
   }
 
   filter (e) {
-    this.setState({selectedOption: e.target.value});
-    //alert(e.target.value);
+    this.setState({doubleClick: !this.state.doubleClick, selectedOption: e.target.value});
+    console.log(e.target.value, this.state.doubleClick);
     if(e.target.value === 'MostPopular'){
+      this.state.doubleClick ? 
       this.setState({recipes: this.state.recipes.sort(function (a, b) {
-        return b.likes - a.likes
+        return b.likes - a.likes 
+        })
+      }) :
+      this.setState({recipes: this.state.recipes.sort(function (a, b) {
+        return a.likes - b.likes 
         })
       });
     }
     if(e.target.value === 'Unused'){
+      this.state.doubleClick ? 
       this.setState({recipes: this.state.recipes.sort(function (a, b) {
-        return a.unusedIngredients.length - b.unusedIngredients.length
+        return  a.unusedIngredients.length - b.unusedIngredients.length 
+        })
+      }) :
+      this.setState({recipes: this.state.recipes.sort(function (a, b) {
+        return  b.unusedIngredients.length - a.unusedIngredients.length 
         })
       });
     }
     if(e.target.value === 'Additional'){
+      this.state.doubleClick ? 
       this.setState({recipes: this.state.recipes.sort(function (a, b) {
         return a.missedIngredientCount - b.missedIngredientCount
+        })
+      }) :
+      this.setState({recipes: this.state.recipes.sort(function (a, b) {
+        return b.missedIngredientCount - a.missedIngredientCount
         })
       });
     }
@@ -171,7 +187,7 @@ class App extends React.Component {
           <h1>RefridgerRaider</h1>
         </div>
         <Search onSearch={this.search.bind(this)}/>
-       <RecipeList likedRecipes={this.state.likedRecipes} recipes={this.state.recipes} selectedOption={this.state.selectedOption} onSave={this.save.bind(this)} onDelete={this.delete.bind(this)} onChange={this.filter.bind(this)}/>
+       <RecipeList likedRecipes={this.state.likedRecipes} recipes={this.state.recipes} selectedOption={this.state.selectedOption} onSave={this.save.bind(this)} onDelete={this.delete.bind(this)} onClick={this.filter.bind(this)}/>
 
         
 

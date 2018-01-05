@@ -9,7 +9,7 @@ class RecipeList extends React.Component {
   }
 
   filter(e) {
-    this.props.onChange(e);
+    this.props.onClick(e);
   }
 render() {
   return (
@@ -23,7 +23,7 @@ render() {
 
             <input type="radio" value="MostPopular" 
                    checked={this.props.selectedOption === 'MostPopular'} 
-                   onChange={this.filter} />
+                   onClick={this.filter} />
             Most Popular  
           </label>
         </div>
@@ -31,7 +31,7 @@ render() {
           <label>
             <input type="radio" value="Unused" 
                    checked={this.props.selectedOption === 'Unused'} 
-                   onChange={this.filter} />
+                   onClick={this.filter} />
             Unused Ingredients  
           </label>
         </div>
@@ -39,7 +39,7 @@ render() {
           <label>
             <input type="radio" value="Additional" 
                    checked={this.props.selectedOption === 'Additional'} 
-                   onChange={this.filter} />
+                   onClick={this.filter} />
             Additional Ingredients  
           </label>
         </div>
