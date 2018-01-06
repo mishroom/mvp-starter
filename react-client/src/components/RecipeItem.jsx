@@ -1,5 +1,6 @@
 import React from 'react';
 import AdditionalIngredients from './AdditionalIngredients.jsx';
+import UnusedIngredients from './UnusedIngredients.jsx';
 
 class RecipeItem extends React.Component {
 
@@ -25,6 +26,7 @@ class RecipeItem extends React.Component {
             Name: <a href={ link.slice(0,-4) } target="_blank">{ this.props.recipe.title }</a><br />
             Likes: { this.props.recipe.likes } <br />
             Unused Ingredients: {this.props.recipe.unusedIngredients.length} <br />
+            {this.props.recipe.unusedIngredients.map(ingredient => <UnusedIngredients key={ingredient.id} name={ingredient.name} /> )} <br />
             Additional Ingredients: {this.props.recipe.missedIngredientCount} <br />
             {this.props.recipe.missedIngredients.map(ingredient => <AdditionalIngredients key={ingredient.id} name={ingredient.name} /> )}
           </div>
