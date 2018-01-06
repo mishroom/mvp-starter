@@ -11,6 +11,11 @@ class RecipeList extends React.Component {
   filter(e) {
     this.props.onClick(e);
   }
+
+  donwload() {
+    this.props.onDownload();
+  }
+
 render() {
   return (
 	<div>
@@ -52,7 +57,8 @@ render() {
 
 	<div className="liked">
 	<h3>Saved Recipes</h3>
-  <button onClick={this.save} > Download as CSV </button>
+  <button  > Download as CSV </button>
+  <br />
 	{this.props.likedRecipes.map(recipe => <Liked key={recipe.id} recipe={recipe} onDelete={this.props.onDelete} />)}
 
 	</div>  

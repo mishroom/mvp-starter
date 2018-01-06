@@ -23,8 +23,8 @@ class RecipeItem extends React.Component {
       return (
         <div className='recipe'>
           <div className ='col'>
-            Name: <a href={ link.slice(0,-4) } target="_blank">{ this.props.recipe.title }</a><br />
-            Likes: { this.props.recipe.likes } <br />
+            Name: <a href={ link.slice(0,-4) } target="_blank">{ this.props.recipe.title }</a><br /> <br />
+            Likes: { this.props.recipe.likes } <br /> <br />
             Unused Ingredients: {this.props.recipe.unusedIngredients.length} <br />
             {this.props.recipe.unusedIngredients.map(ingredient => <UnusedIngredients key={ingredient.id} name={ingredient.name} /> )} <br />
             Additional Ingredients: {this.props.recipe.missedIngredientCount} <br />

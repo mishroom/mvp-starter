@@ -88,7 +88,7 @@ class App extends React.Component {
 
   filter (e) {
     this.setState({doubleClick: !this.state.doubleClick, selectedOption: e.target.value});
-    console.log(e.target.value, this.state.doubleClick);
+    // console.log(e.target.value, this.state.doubleClick);
     if(e.target.value === 'MostPopular'){
       this.state.doubleClick ? 
       this.setState({recipes: this.state.recipes.sort(function (a, b) {
@@ -122,6 +122,10 @@ class App extends React.Component {
         })
       });
     }
+  }
+
+  download () {
+    alert('DOWNLOAD CLICKED');
   }
 
   search(ingredient) {
@@ -187,7 +191,7 @@ class App extends React.Component {
           <h1>RefridgerRaider</h1>
         </div>
         <Search onSearch={this.search.bind(this)}/>
-       <RecipeList likedRecipes={this.state.likedRecipes} recipes={this.state.recipes} selectedOption={this.state.selectedOption} onSave={this.save.bind(this)} onDelete={this.delete.bind(this)} onClick={this.filter.bind(this)}/>
+       <RecipeList likedRecipes={this.state.likedRecipes} recipes={this.state.recipes} selectedOption={this.state.selectedOption} onSave={this.save.bind(this)} onDelete={this.delete.bind(this)} onClick={this.filter.bind(this)} onDownload={this.download.bind(this)} />
 
         
 
